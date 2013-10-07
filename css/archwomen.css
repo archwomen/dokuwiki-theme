@@ -1,0 +1,84 @@
+/* Global Settings */
+body {
+	font-family: Verdana, "Droid Sans", Arial, Helvetica;
+	color: #ccc;
+	background-color: #333;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+	color: #1793d1;
+}
+
+a:hover, a:active {
+	text-decoration: none;
+	color: #fff;
+}
+
+a:link:hover, a:visited:hover, a:link:focus, a:visited:focus, a:link:active, a:visited:active {
+	text-decoration: none;
+	color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #fff;
+	font-family: Verdana, "Droid Sans", Arial, Helvetica;
+}
+
+/* Dokuwiki admin links */
+
+.dokuwiki a.wikilink1, #dokuwiki__usertools a.wikilink1, #dokuwiki__header h1 a {
+	color: #1793d1;
+}
+
+.dokuwiki a.wikilink1:hover, #dokuwiki__usertools a.wikilink1:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* Buttons */
+
+.dokuwiki input.button, .dokuwiki button.button {
+	background-color: #2a2a2a;
+	border: 4px solid #2a2a2a;
+	border-radius: 10px;
+}
+
+/* User toolbar (logged in as, user page, profile) */
+
+#dokuwiki__usertools {
+	position: relative;
+}
+
+/* Page editing toolbar */
+
+#dokuwiki__pagetools {
+	position: relative;
+	max-width: 1140px;
+	margin-top: 2em;
+}
+
+/* last modified information */
+#dokuwiki__footer .doc {
+	float: none;
+	text-align:right;
+	margin-bottom: 1em;
+	margin-top: -2em;
+}
+
+/* Wiki formating */
+
+#dokuwiki__site {
+	padding: none;
+	max-width: 100%;
+}
+
+#dokuwiki__site .wrapper {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+#dokuwiki__header div.breadcrumbs {
+	text-align: center;
+	margin-bottom: .8em;
+}

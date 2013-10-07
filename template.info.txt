@@ -1,0 +1,7 @@
+base     starter
+author   Dolores Portalatin
+email    dolores@archwomen.org
+date     2013-07-30
+name     Archwomen Template
+desc     Template for Archwomen.org
+url      http://www.dokuwiki.org/template:starter
