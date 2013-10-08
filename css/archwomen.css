@@ -73,6 +73,10 @@ body {
 	background-color: #333;
 }
 
+#dokuwiki__site {
+    padding: 0.5em;
+}
+
 a:link, a:visited {
     text-decoration: none;
 	color: #1793d1;
