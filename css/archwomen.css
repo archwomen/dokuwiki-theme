@@ -195,6 +195,13 @@ input:focus {
 	text-align: center;
 }
 
+/* Page footer */
+
+div.doc {
+    text-align: right;
+    margin-bottom: 2em;
+}
+
 /* Footer */
 
 footer.main {
