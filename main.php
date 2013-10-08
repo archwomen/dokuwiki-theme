@@ -164,7 +164,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <div id="dokuwiki__footer"><div class="pad">
             <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
             <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
-        </div></div><!-- /footer -->
+        </div></div>
+        <?php include('tpl_footer.php') ?>
+        <!-- /footer -->
 
     </div></div><!-- /site -->
 
