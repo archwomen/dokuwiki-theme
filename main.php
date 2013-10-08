@@ -81,19 +81,18 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                         </ul>
                     </div>
                 <?php endif ?>
-
                 <!-- SITE TOOLS -->
-                <!-- <div id="dokuwiki__sitetools">
-                    <h3 class="a11y"><?php echo $lang['site_tools'] ?></h3>
+                <div id="dokuwiki__sitetools">
+                    <!-- <h3 class="a11y"><?php echo $lang['site_tools'] ?></h3> -->
                     <?php tpl_searchform() ?>
-                    <ul>
+                    <!-- <ul>
                         <?php
                             tpl_action('recent', 1, 'li');
                             tpl_action('media', 1, 'li');
                             tpl_action('index', 1, 'li');
                         ?>
-                    </ul>
-                </div> -->
+                    </ul> -->
+                </div>
 
             </div>
             <div class="clearer"></div>
@@ -161,18 +160,16 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             <?php endif; ?>
             <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
         </div><!-- /wrapper -->
-
-		<!-- ********** FOOTER ********** -->
+        <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+        <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
+		
+        <!-- ********** FOOTER ********** -->
         <!-- <div id="dokuwiki__footer"><div class="pad">
             <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
             <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
         </div></div> -->
         <?php include('tpl_footer.php') ?>
         <!-- /footer -->
-
     </div></div><!-- /site -->
-
-    <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
-    <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
 </body>
 </html>
