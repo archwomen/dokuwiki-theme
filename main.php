@@ -158,7 +158,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                     </ul>
                 </div>
             <?php endif; ?>
-            <div class="doc"><?php tpl_pageinfo90 /* 'Last modified' etc */ ?></div>
+            <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
         </div><!-- /wrapper -->
 
 		<!-- ********** FOOTER ********** -->
