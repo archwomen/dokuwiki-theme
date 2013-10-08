@@ -158,13 +158,14 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                     </ul>
                 </div>
             <?php endif; ?>
+            <div class="doc"><?php tpl_pageinfo90 /* 'Last modified' etc */ ?></div>
         </div><!-- /wrapper -->
 
 		<!-- ********** FOOTER ********** -->
-        <div id="dokuwiki__footer"><div class="pad">
+        <!-- <div id="dokuwiki__footer"><div class="pad">
             <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
-            <!-- <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?> -->
-        </div></div>
+            <?php tpl_license('button') /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
+        </div></div> -->
         <?php include('tpl_footer.php') ?>
         <!-- /footer -->
 
