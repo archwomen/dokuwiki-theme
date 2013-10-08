@@ -41,8 +41,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         <?php tpl_includeFile('header.html') ?>
 
         <!-- ********** HEADER ********** -->
+        <?php include('tpl_header.php') ?> 
         <div id="dokuwiki__header"><div class="pad">
-
+            <!--
             <div class="headings">
                 <h1><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h1>
                 <?php /* how to insert logo instead (if no CSS image replacement technique is used):
@@ -57,7 +58,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                 </ul>
                 <div class="clearer"></div>
             </div>
-
+            -->
             <div class="tools">
                 <!-- USER TOOLS -->
                 <?php if ($conf['useacl'] && $showTools): ?>
@@ -82,7 +83,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                 <?php endif ?>
 
                 <!-- SITE TOOLS -->
-                <div id="dokuwiki__sitetools">
+                <!-- <div id="dokuwiki__sitetools">
                     <h3 class="a11y"><?php echo $lang['site_tools'] ?></h3>
                     <?php tpl_searchform() ?>
                     <ul>
@@ -92,7 +93,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                             tpl_action('index', 1, 'li');
                         ?>
                     </ul>
-                </div>
+                </div> -->
 
             </div>
             <div class="clearer"></div>
