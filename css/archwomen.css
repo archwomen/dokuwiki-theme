@@ -172,6 +172,8 @@ input:focus {
 
 #dokuwiki__usertools {
 	position: relative;
+        background-color: #333;
+        border-bottom: none;
 }
 
 /* Search Bar */
@@ -182,8 +184,14 @@ input:focus {
     width: 9em;
 }
 
+#dokuwiki__header form.search #qsearch__in {
+    width: 8em;
+}
+
 #dokuwiki__header form.search {
-   
+   margin: 2em 0em 0em;
+   position: absolute;
+   left: 191px;
 }
 
 /* Page editing toolbar */
