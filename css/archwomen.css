@@ -105,7 +105,7 @@ header.main {
 }
 nav.main {
     text-align: right;
-    padding: 1em;
+    padding: 1em 0em .5em 1em;
 }
 nav.main ul, li {
     padding-left: .5em;
