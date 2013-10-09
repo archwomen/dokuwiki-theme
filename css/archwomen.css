@@ -79,7 +79,7 @@ body {
 
 a:link, a:visited {
     text-decoration: none;
-	color: #1793d1;
+    color: #1793d1;
 }
 
 a:hover, a:active {
@@ -172,6 +172,13 @@ input:focus {
 
 #dokuwiki__usertools {
 	position: relative;
+}
+
+/* Search Bar */
+.dokuwiki input#qsearch__in.edit {
+    background-color: #2a2a2a;
+    border: 1px solid #222;
+    border-radius: 10px;
 }
 
 /* Page editing toolbar */
