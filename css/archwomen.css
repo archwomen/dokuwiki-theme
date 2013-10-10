@@ -242,6 +242,14 @@ input:focus {
 	text-align: center;
 }
 
+#dokuwiki__aside hr {
+    margin-left: 1em;
+}
+
+#dokuwiki__aside h4 {
+    padding-left: 1.5em;
+}
+
 /* Page footer */
 
 div.doc {
