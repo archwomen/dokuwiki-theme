@@ -84,8 +84,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                 <!-- SITE TOOLS -->
                 <div id="dokuwiki__sitetools">
                     <!-- <h3 class="a11y"><?php echo $lang['site_tools'] ?></h3> -->
-                    <?php tpl_searchform() ?>
-                    <!-- <ul>
+                    <!-- <?php tpl_searchform() ?>
+                     <ul>
                         <?php
                             tpl_action('recent', 1, 'li');
                             tpl_action('media', 1, 'li');
@@ -115,7 +115,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             <!-- ********** ASIDE ********** -->
             <?php if ($showSidebar): ?>
                 <div id="dokuwiki__aside"><div class="pad include">
-                    <?php tpl_includeFile('sidebarheader.html') ?>
+					<?php tpl_includeFile('sidebarheader.html') ?>
+                    <?php tpl_searchform() ?>
                     <?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */ ?>
                     <?php tpl_includeFile('sidebarfooter.html') ?>
                     <div class="clearer"></div>

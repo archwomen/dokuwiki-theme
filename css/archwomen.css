@@ -142,8 +142,8 @@ header.main img {
 /* Buttons */
 
 .dokuwiki input.button, .dokuwiki button.button {
-	background-color: #2a2a2a;
-	border: 4px solid #2a2a2a;
+	background-color: #222;
+	border: 4px solid #222;
 	font-size: 0.8em;
 }
 
@@ -181,7 +181,8 @@ input:focus {
 .dokuwiki input#qsearch__in.edit {
     background-color: #2a2a2a;
     border: 1px solid #222;
-    width: 9em;
+    width: 6em;
+    margin-left:1em;
 }
 
 #dokuwiki__header form.search #qsearch__in {
@@ -189,7 +190,7 @@ input:focus {
 }
 
 #dokuwiki__header form.search {
-   margin: 2em 0em 0em;
+   margin: 4.8em 0em 0em;
    position: absolute;
    left: 191px;
 }
@@ -232,6 +233,7 @@ input:focus {
 #dokuwiki__aside {
 	width: 200px;
 	background-color: #2a2a2a;
+    margin-top: 1em;
 }
 
 #dokuwiki__aside ul,li {
@@ -240,6 +242,7 @@ input:focus {
 
 #dokuwiki__aside img {
 	text-align: center;
+	margin-bottom: 1em;
 }
 
 #dokuwiki__aside hr {
@@ -249,6 +252,8 @@ input:focus {
 #dokuwiki__aside h4 {
     padding-left: 1.5em;
 }
+
+
 
 /* Page footer */
 
