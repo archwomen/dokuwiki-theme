@@ -231,13 +231,9 @@ input:focus {
 /* Sidebar */
 
 #dokuwiki__aside {
-	width: 200px;
-	background-color: #2a2a2a;
+    width: 200px;
+    background-color: #2a2a2a;
     margin-top: 1em;
-}
-
-#dokuwiki__aside ul,li {
-	list-style: none;
 }
 
 #dokuwiki__aside img {
@@ -253,8 +249,6 @@ input:focus {
     padding-left: 1.5em;
     padding-top: 1em;
 }
-
-
 
 /* Page footer */
 
