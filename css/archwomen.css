@@ -135,8 +135,8 @@ header.main img {
 #dokuwiki__usertools a.wikilink1:hover,
 #dokuwiki__pagetools a.wikilink1:hover,
 #dokuwiki__pagetools a.wikilink2:focus {
-	text-decoration: none;
-	color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 /* Buttons */
@@ -236,6 +236,10 @@ input:focus {
     margin-top: 1em;
 }
 
+#dokuwiki__aside ul {
+    list-style: none;
+}
+
 #dokuwiki__aside img {
 	text-align: center;
 	margin-bottom: 1em;
@@ -246,7 +250,7 @@ input:focus {
 }
 
 #dokuwiki__aside h4 {
-    padding-left: 1.5em;
+    text-align:center;
     padding-top: 1em;
 }
 
