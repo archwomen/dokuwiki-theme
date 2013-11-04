@@ -1,4 +1,33 @@
-Arch Women's Dokuwiki theme. Theme is based off the starter theme
+Arch Women's Dokuwiki theme. Theme is based off the starter theme - https://github.com/selfthinker/dokuwiki_template_starter
+
+Differences from starter theme:
+
+File additions:
+    *css/normalize.css
+    *css/archwomen.css
+    *tpl_footer.php
+    *tpl_header.php
+    *sidebarheader.html
+    *favicon.ico
+
+file changes:
+    *style.ini - added custom css files and changed the color settings (main site and text colors)
+    *template.info.txt - author, email, creation date and other template information
+    *main.php - header and footer added, search moved to sidebar, sitetools commented out (these are linked in sidebarheader.html)
+
+Supported Include Hooks:
+
+These files can be added to the theme root directory and will be automatically used by the template:
+
+meta.html - additional meta tags for the <head> section of the site
+sidebarheader.html - at the top of the sidebar
+sidebarfooter.html - at the bottom of the sidebar
+pagefooter.html - at the bottom of the content box
+header.html - placed at the top of the page above the logo and wiki title
+footer.html - placed at the end of the page after all content
+
+Updating the theme:
+To update this theme with dokuwiki updates, download the latest starter template, add in the file additions, then merge changes with the remaing files.
 
 See template.info.txt for main info
 See COPYING for license info
