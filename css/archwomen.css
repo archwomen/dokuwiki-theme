@@ -254,6 +254,12 @@ input:focus {
     padding-top: 1em;
 }
 
+/* Extention Rating */
+div.popularity {
+    background-color: #444;
+    border: 1px solid #444;
+}
+
 /* Page footer */
 
 div.doc {
