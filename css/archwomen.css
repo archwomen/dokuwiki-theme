@@ -30,7 +30,6 @@
 .col-4-4 {margin-left: 75%;}
 
 /* Global Settings */
-
 body {
     font-family: Verdana, "Droid Sans", Arial, Helvetica;
     color: #ccc;
@@ -93,7 +92,6 @@ header.main img {
 }
 
 /* Dokuwiki admin links */
-
 .dokuwiki a.wikilink1, 
 #dokuwiki__usertools a.wikilink1, 
 #dokuwiki__pagetools a.wikilink1, 
@@ -112,36 +110,30 @@ header.main img {
 }
 
 /* Buttons */
-
 .dokuwiki input.button, .dokuwiki button.button {
     background-color: #222;
     border: 4px solid #222;
     font-size: 0.8em;
 }
-
 select.quickselect {
     background-color: #2a2a2a;
     border: 1px dotted #ccc;
 }
 
 /* Text Areas */
-
 .dokuwiki textarea#wiki__text.edit {
     background: #111;
     border: 3px solid #111;
 }
-
 textarea:focus {
     box-shadow: 0px 0px 6px rgb(0, 0, 0);
 }
-
 input:focus {
     box-shadow: none;
     background: #111;
 }
 
 /* User toolbar (logged in as, user page, profile) */
-
 #dokuwiki__usertools {
     position: relative;
     background-color: #333;
@@ -149,18 +141,15 @@ input:focus {
 }
 
 /* Search Bar */
-
 .dokuwiki input#qsearch__in.edit {
     background-color: #2a2a2a;
     border: 1px solid #222;
     width: 6em;
     margin-left:1em;
 }
-
 #dokuwiki__header form.search #qsearch__in {
     width: 8em;
 }
-
 #dokuwiki__header form.search {
     margin: 4.8em 0em 0em;
     position: absolute;
@@ -168,7 +157,6 @@ input:focus {
 }
 
 /* Page editing toolbar */
-
 #dokuwiki__pagetools {
     position: relative;
     max-width: 1140px;
@@ -184,43 +172,35 @@ input:focus {
 }
 
 /* Wiki formating */
-
 #dokuwiki__site {
     padding: none;
     max-width: 100%;
 }
-
 #dokuwiki__site .wrapper {
     max-width: 1140px;
     margin: 0 auto;
 }
-
 #dokuwiki__header div.breadcrumbs {
     text-align: center;
     margin-bottom: .8em;
 }
 
 /* Sidebar */
-
 #dokuwiki__aside {
     width: 200px;
     background-color: #2a2a2a;
     margin-top: 1em;
 }
-
 #dokuwiki__aside ul {
     list-style: none;
 }
-
 #dokuwiki__aside img {
     text-align: center;
     margin-bottom: 1em;
 }
-
 #dokuwiki__aside hr {
     margin-left: 1em;
 }
-
 #dokuwiki__aside h4 {
     text-align:center;
     padding-top: 1em;
@@ -233,14 +213,21 @@ div.popularity {
 }
 
 /* Page footer */
-
 div.doc {
     text-align: right;
     margin-bottom: 2em;
 }
 
 /* Footer */
-
 .icon {
     vertical-align: middle;
+}
+
+/* Change Format on Small Screens */
+@media only screen and (max-width: 740px) {
+    .col-1-2, .col-2-2,
+    .col-1-3, .col-2-3, .col-3-3,
+    .col-1-4, .col-2-4, .col-3-4, .col-4-4 {
+                width: 100%; margin:0;
+    }
 }
