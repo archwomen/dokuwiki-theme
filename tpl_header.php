@@ -5,7 +5,7 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/community-standards">Community Standards</a></li>
                 <li><a href="/blog">Blog</a></li>
-                <li><a href="/wiki">Wiki</a></li>
+                <li id="currentpage"><a href="/wiki">Wiki</a></li>
                 <li><a href="/contribute">Contribute</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
