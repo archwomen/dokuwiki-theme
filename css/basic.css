@@ -261,6 +261,8 @@ iframe {
 }
 
 /* IE8 and below won't display the images otherwise */
+#IE7 img,
+#IE8 img,
 button img {
     max-width: none;
 }
@@ -410,8 +412,6 @@ button {
     overflow: visible;
     padding: .1em .4em;
 }
-#IE6 .dokuwiki input.button,
-#IE6 .dokuwiki button,
 #IE7 .dokuwiki input.button,
 #IE7 .dokuwiki button {
     line-height: 1.4;
@@ -419,9 +419,15 @@ button {
 
 input[disabled],
 button[disabled],
+select[disabled],
+textarea[disabled],
+option[disabled],
 input[readonly],
-button[readonly] {
+button[readonly],
+select[readonly],
+textarea[readonly] {
     cursor: auto;
+    opacity: .5;
 }
 
 input:focus,
@@ -438,6 +444,9 @@ button::-moz-focus-inner {
     padding: 0;
 }
 
+select {
+    max-width: 100%;
+}
 optgroup {
     font-style: italic;
     font-weight: bold;

@@ -9,15 +9,15 @@
 
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 @require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
+header('X-UA-Compatible: IE=edge,chrome=1');
 
-$showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER['REMOTE_USER'] );
+$showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && !empty($_SERVER['REMOTE_USER']) );
 $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
     <meta charset="UTF-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
     <link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
@@ -29,20 +29,19 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
 <body>
     <?php /* with these Conditional Comments you can better address IE issues in CSS files,
-             precede CSS rules by #IE6 for IE6, #IE7 for IE7 and #IE8 for IE8 (div closes at the bottom) */ ?>
-    <!--[if IE 6 ]><div id="IE6"><![endif]--><!--[if IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+             precede CSS rules by #IE7 for IE7 and #IE8 for IE8 (div closes at the bottom) */ ?>
+    <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
 
     <?php /* the "dokuwiki__top" id is needed somewhere at the top, because that's where the "back to top" button/link links to */ ?>
-    <?php /* classes mode_<action> are added to make it possible to e.g. style a page differently if it's in edit mode,
-         see http://www.dokuwiki.org/devel:action_modes for a list of action modes */ ?>
-    <?php /* .dokuwiki should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
-    <div id="dokuwiki__site"><div id="dokuwiki__top"
-        class="dokuwiki site mode_<?php echo $ACT ?> <?php echo ($showSidebar) ? 'hasSidebar' : '' ?>">
+    <?php /* tpl_classes() provides useful CSS classes; if you choose not to use it, the 'dokuwiki' class at least
+             should always be in one of the surrounding elements (e.g. plugins and templates depend on it) */ ?>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php
+        echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
         <?php html_msgarea() /* occasional error and info messages on top of the page */ ?>
         <?php tpl_includeFile('header.html') ?>
 
         <!-- ********** HEADER ********** -->
-        <?php include('tpl_header.php') ?> 
+        <?php include('tpl_header.php') ?>
         <div id="dokuwiki__header"><div class="pad">
             <!--
             <div class="headings">
@@ -66,32 +65,37 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                     <div id="dokuwiki__usertools">
                         <h3 class="a11y"><?php echo $lang['user_tools'] ?></h3>
                         <ul>
-                            <?php /* the optional second parameter of tpl_action() switches between a link and a button,
-                                     e.g. a button inside a <li> would be: tpl_action('edit', 0, 'li') */
-                                if ($_SERVER['REMOTE_USER']) {
+                            <?php
+                                if (!empty($_SERVER['REMOTE_USER'])) {
                                     echo '<li class="user">';
                                     tpl_userinfo(); /* 'Logged in as ...' */
                                     echo '</li>';
                                 }
-                                tpl_action('admin', 1, 'li');
-                                _tpl_action('userpage', 1, 'li');
-                                tpl_action('profile', 1, 'li');
-                                tpl_action('register', 1, 'li'); /* DW versions < 2011-02-20 need to use _tpl_action('register', 1, 'li') */
-                                tpl_action('login', 1, 'li');
                             ?>
+                            <?php /* the optional second parameter of tpl_action() switches between a link and a button,
+                                     e.g. a button inside a <li> would be: tpl_action('edit', 0, 'li') */
+                            ?>
+                            <?php _tpl_toolsevent('usertools', array(
+                                'admin'     => tpl_action('admin', 1, 'li', 1),
+                                'userpage'  => _tpl_action('userpage', 1, 'li', 1),
+                                'profile'   => tpl_action('profile', 1, 'li', 1),
+                                'register'  => tpl_action('register', 1, 'li', 1),
+                                'login'     => tpl_action('login', 1, 'li', 1),
+                            )); ?>
                         </ul>
                     </div>
                 <?php endif ?>
+
                 <!-- SITE TOOLS -->
                 <div id="dokuwiki__sitetools">
                     <!-- <h3 class="a11y"><?php echo $lang['site_tools'] ?></h3> -->
                     <!-- <?php tpl_searchform() ?>
-                     <ul>
-                        <?php
-                            tpl_action('recent', 1, 'li');
-                            tpl_action('media', 1, 'li');
-                            tpl_action('index', 1, 'li');
-                        ?>
+                    <ul>
+                        <?php _tpl_toolsevent('sitetools', array(
+                            'recent'    => tpl_action('recent', 1, 'li', 1),
+                            'media'     => tpl_action('media', 1, 'li', 1),
+                            'index'     => tpl_action('index', 1, 'li', 1),
+                        )); ?>
                     </ul> -->
                 </div>
 
@@ -115,8 +119,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 
             <!-- ********** ASIDE ********** -->
             <?php if ($showSidebar): ?>
-                <div id="dokuwiki__aside"><div class="pad include">
-					<?php tpl_includeFile('sidebarheader.html') ?>
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <?php tpl_includeFile('sidebarheader.html') ?>
                     <?php tpl_searchform() ?>
                     <?php tpl_include_page($conf['sidebar'], 1, 1) /* includes the nearest sidebar page */ ?>
                     <?php tpl_includeFile('sidebarfooter.html') ?>
@@ -148,23 +152,21 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                 <div id="dokuwiki__pagetools">
                     <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
                     <ul>
-                        <?php
-                            tpl_action('edit', 1, 'li');
-                            _tpl_action('discussion', 1, 'li');
-                            tpl_action('revisions', 1, 'li');
-                            tpl_action('backlink', 1, 'li');
-                            tpl_action('subscribe', 1, 'li');
-                            tpl_action('revert', 1, 'li');
-                            tpl_action('top', 1, 'li');
-                        ?>
+                        <?php _tpl_toolsevent('pagetools', array(
+                            'edit'      => tpl_action('edit', 1, 'li', 1),
+                            'discussion'=> _tpl_action('discussion', 1, 'li', 1),
+                            'revisions' => tpl_action('revisions', 1, 'li', 1),
+                            'backlink'  => tpl_action('backlink', 1, 'li', 1),
+                            'subscribe' => tpl_action('subscribe', 1, 'li', 1),
+                            'revert'    => tpl_action('revert', 1, 'li', 1),
+                            'top'       => tpl_action('top', 1, 'li', 1),
+                        )); ?>
                     </ul>
                 </div>
             <?php endif; ?>
             <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
         </div><!-- /wrapper -->
-        <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
-        <!--[if ( IE 6 | IE 7 | IE 8 ) ]></div><![endif]-->
-		
+
         <!-- ********** FOOTER ********** -->
         <!-- <div id="dokuwiki__footer"><div class="pad">
             <div class="doc"><?php tpl_pageinfo() /* 'Last modified' etc */ ?></div>
@@ -172,6 +174,11 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
         </div></div> -->
         <?php include('tpl_footer.php') ?>
         <!-- /footer -->
+
+        <?php tpl_includeFile('footer.html') ?>
     </div></div><!-- /site -->
+
+    <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+    <!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->
 </body>
 </html>
