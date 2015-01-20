@@ -13,7 +13,7 @@ File additions:
 file changes:
     *style.ini - added custom css files and changed the color settings (main site and text colors)
     *template.info.txt - author, email, creation date and other template information
-    *main.php - header and footer added, search moved to sidebar, sitetools commented out (these are linked in sidebarheader.html)
+    *main.php - header and footer added, search moved to sidebar, sitetools commented out (these are linked in sidebarheader.html), normalize css added via CDN
 
 Supported Include Hooks:
 
