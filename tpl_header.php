@@ -1,5 +1,5 @@
     <header class="main">
-      <a href="/"><img src="/assets/images/archwomen.png"></a>
+      <a href="/"><img alt="home" width="196" height="65" src="/assets/images/archwomen.png"></a>
       <nav class="main">
         <ul>
           <li><a href="/about">About</a></li>
