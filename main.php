@@ -18,6 +18,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="An organization that aims to increase female involvement in Arch Linux" />
+    <meta name="author" content="Arch Women" />
+    <meta name="keywords" lang="en-us" content="linux, arch linux, women, arch women, technology, programming, feminism" />
     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
     <link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
