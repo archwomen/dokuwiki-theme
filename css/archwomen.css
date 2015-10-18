@@ -191,7 +191,6 @@ input:focus {
 
 /* Sidebar */
 #dokuwiki__aside {
-    width: 200px;
     background-color: #2a2a2a;
     margin-top: 1em;
 }
@@ -208,6 +207,10 @@ input:focus {
 #dokuwiki__aside h4 {
     text-align:center;
     padding-top: 1em;
+}
+
+.page {
+  padding: 1em;
 }
 
 /* Extention Rating */
