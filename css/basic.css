@@ -261,7 +261,6 @@ iframe {
 }
 
 /* IE8 and below won't display the images otherwise */
-#IE7 img,
 #IE8 img,
 button img {
     max-width: none;
@@ -412,10 +411,6 @@ button {
     overflow: visible;
     padding: .1em .4em;
 }
-#IE7 .dokuwiki input.button,
-#IE7 .dokuwiki button {
-    line-height: 1.4;
-}
 
 input[disabled],
 button[disabled],
@@ -454,28 +449,4 @@ optgroup {
 option {
     font-style: normal;
     font-weight: normal;
-}
-
-
-/*____________ general classes ____________*/
-
-div.clearer {
-    /* additional to what's already in DokuWiki's lib/styles/all.css: */
-    font-size: 1px;
-    visibility: hidden;
-}
-
-/* @deprecated: has been in lib/styles/screen.css since Angua */
-.a11y {
-    position: absolute;
-    left: -99999em;
-    top: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    display: inline;
-}
-[dir=rtl] .a11y {
-    left: auto;
-    right: -99999em;
 }
