@@ -22,7 +22,8 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
     <meta name="author" content="Arch Women" />
     <meta name="keywords" lang="en-us" content="linux, arch linux, women, arch women, technology, programming, feminism" />
     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
-    <link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/normalize.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/font-awesome.min.css">
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders() ?>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
