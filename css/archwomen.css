@@ -117,6 +117,7 @@ header.main, footer.main {
 nav li {
   padding: .6rem;
   display: inline-block;
+}
 #currentpage a {
     color: #fff;
 }
