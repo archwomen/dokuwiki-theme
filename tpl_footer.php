@@ -114,7 +114,7 @@
         <h3>Sponsors</h3>
         <p>
           <a href="https://www.digitalocean.com/">
-            <img width="140" height="39" alt="digital ocean" src="/static/images/digitalocean.png">
+            <img width="140" height="39" alt="digital ocean" src="https://archwomen.org/static/images/digitalocean.png">
           </a>
         </p>
         <p>
